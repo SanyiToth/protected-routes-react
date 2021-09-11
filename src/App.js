@@ -1,7 +1,6 @@
 import './App.css';
 import React, {useState} from "react";
-import LandingPage from "./components/LandingPage";
-import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import Profile from "./components/Profile";
 
