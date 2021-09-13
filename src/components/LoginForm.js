@@ -4,25 +4,30 @@ import {useHistory} from "react-router-dom";
 
 
 function LoginForm({users, error, setError, isAuth, setIsAuth}) {
-    const [details, setDetails] = useState({name: "", email: "", password: ""});
+
+    const [formValues, setFormValues] = useState({email: "", password: ""});
     const history = useHistory();
 
-    const Login = details => {
-        for (const user of users) {
-            //Shanna@melissa.tv,Karley_Dach@jasper.info
-            if (details.email === user.email && details.password === CURRENT_PASSWORD) {
-                setIsAuth(true);
-                history.push("/dashboard");
-                setError("");
-                break;
-            }
+    const Login = formValues => {
+        const authUser = users.filter(user =>
+            formValues.email === user.email && formValues.password === CURRENT_PASSWORD
+        )
+        const navigateToDashboard = () => {
+            history.push("/dashboard");
+        }
+
+        if (authUser.length) {
+            setIsAuth(true);
+            navigateToDashboard();
+        } else {
+            setError("Email or Password doesn't match!")
         }
     }
 
 
     const submitHandler = e => {
         e.preventDefault();
-        Login(details);
+        Login(formValues);
     }
 
 
@@ -34,12 +39,14 @@ function LoginForm({users, error, setError, isAuth, setIsAuth}) {
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
                     <input type="email" name="email" id="email"
-                           onChange={e => setDetails({...details, email: e.target.value})} value={details.email}/>
+                           onChange={e => setFormValues({...formValues, email: e.target.value})}
+                           value={formValues.email}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password:</label>
                     <input type="password" name="password" id="password"
-                           onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
+                           onChange={e => setFormValues({...formValues, password: e.target.value})}
+                           value={formValues.password}/>
                 </div>
                 <input type="submit" value="LOGIN"/>
             </div>
