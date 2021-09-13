@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {CURRENT_PASSWORD} from "../Password";
+import {Button, Form, Icon} from 'react-bulma-components';
 import {useHistory} from "react-router-dom";
 import 'bulma/css/bulma.min.css';
-import {Button, Form, Icon} from 'react-bulma-components';
+import './LoginForm.css';
+
 
 
 function LoginForm({users, error, setError, setIsLoggedIn}) {
