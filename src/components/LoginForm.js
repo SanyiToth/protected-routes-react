@@ -8,14 +8,15 @@ function LoginForm({users, error, setError, isAuth, setIsAuth}) {
     const history = useHistory();
 
     const Login = details => {
-        users.forEach(user => {
+        for (const user of users) {
             //Shanna@melissa.tv,Karley_Dach@jasper.info
             if (details.email === user.email && details.password === CURRENT_PASSWORD) {
                 setIsAuth(true);
+                history.push("/dashboard");
                 setError("");
+                break;
             }
-        });
-        isAuth ? history.push("/profile") : setError("Wrong email or password!");
+        }
     }
 
 

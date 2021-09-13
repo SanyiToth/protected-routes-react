@@ -1,9 +1,8 @@
-import './App.css';
 import React, {useEffect, useState} from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
-import Profile from "./components/Profile";
 import LoginForm from "./components/LoginForm";
+import Dashboard from "./components/Dashboard";
 
 
 function App() {
@@ -42,14 +41,15 @@ function App() {
     }
 
 
-
     return (
-        <Router>
-            <Route path="/" exact>
-                <LoginForm users={users} error={error} isAuth={isAuth} setIsAuth={setIsAuth} setError={setError}/>
-            </Route>
-            <ProtectedRoute path="/profile" Logout={Logout} component={Profile} isAuth={isAuth}/>
-        </Router>
+        <div className="App">
+            <Router>
+                <Route path="/" exact>
+                    <LoginForm users={users} error={error} isAuth={isAuth} setIsAuth={setIsAuth} setError={setError}/>
+                </Route>
+                <ProtectedRoute path="/dashboard" Logout={Logout} component={Dashboard} isAuth={isAuth}/>
+            </Router>
+        </div>
     );
 }
 
