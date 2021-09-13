@@ -3,21 +3,24 @@ import {CURRENT_PASSWORD} from "../Password";
 import {useHistory} from "react-router-dom";
 
 
-function LoginForm({users, error, setError, isAuth, setIsAuth}) {
+function LoginForm({users, error, setError,setIsLoggedIn}) {
 
     const [formValues, setFormValues] = useState({email: "", password: ""});
     const history = useHistory();
 
     const Login = formValues => {
-        const authUser = users.filter(user =>
-            formValues.email === user.email && formValues.password === CURRENT_PASSWORD
-        )
+
+        const isValidEmail = users.filter(user =>
+            formValues.email === user.email).length > 0;
+
+        const isValidPassword = formValues.password === CURRENT_PASSWORD;
+
         const navigateToDashboard = () => {
             history.push("/dashboard");
         }
 
-        if (authUser.length) {
-            setIsAuth(true);
+        if (isValidEmail && isValidPassword) {
+            setIsLoggedIn(true);
             navigateToDashboard();
         } else {
             setError("Email or Password doesn't match!")

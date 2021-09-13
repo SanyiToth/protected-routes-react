@@ -7,7 +7,7 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
 
-    const [isAuth, setIsAuth] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [users, setUsers] = useState([]);
     const [user, setUSer] = useState({email: ""});
     const [error, setError] = useState("");
@@ -36,7 +36,7 @@ function App() {
             name: "",
             email: ""
         });
-        setIsAuth(false);
+        setIsLoggedIn(false);
         setError("You logged out!");
     }
 
@@ -45,9 +45,9 @@ function App() {
         <div className="App">
             <Router>
                 <Route path="/" exact>
-                    <LoginForm users={users} error={error} isAuth={isAuth} setIsAuth={setIsAuth} setError={setError}/>
+                    <LoginForm users={users} error={error} isAuth={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setError={setError}/>
                 </Route>
-                <ProtectedRoute path="/dashboard" Logout={Logout} component={Dashboard} isAuth={isAuth}/>
+                <ProtectedRoute path="/dashboard" Logout={Logout} component={Dashboard} isAuth={isLoggedIn}/>
             </Router>
         </div>
     );
