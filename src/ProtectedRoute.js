@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Redirect} from "react-router-dom";
 
-function ProtectedRoute({isAuth: isAuth, component: Component, Logout: Logout, ...rest}) {
+function ProtectedRoute({isAuth, component: Component, Logout, ...rest}) {
     return (
         <Route
             {...rest}

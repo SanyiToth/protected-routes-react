@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import {CURRENT_PASSWORD} from "../Password";
 import {useHistory} from "react-router-dom";
+import 'bulma/css/bulma.min.css';
+import {Button, Form, Icon} from 'react-bulma-components';
 
 
-function LoginForm({users, error, setError,setIsLoggedIn}) {
+function LoginForm({users, error, setError, setIsLoggedIn}) {
 
     const [formValues, setFormValues] = useState({email: "", password: ""});
     const history = useHistory();
@@ -35,25 +37,31 @@ function LoginForm({users, error, setError,setIsLoggedIn}) {
 
 
     return (
-        <form onSubmit={submitHandler}>
-            <div className="form-inner">
-                <h2>Login</h2>
-                {(error !== "") ? (<div className="error">{error}</div>) : ""}
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" id="email"
-                           onChange={e => setFormValues({...formValues, email: e.target.value})}
-                           value={formValues.email}/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" name="password" id="password"
-                           onChange={e => setFormValues({...formValues, password: e.target.value})}
-                           value={formValues.password}/>
-                </div>
-                <input type="submit" value="LOGIN"/>
-            </div>
-        </form>
+        <div className="LoginForm">
+            <Form.Field>
+                <Form.Label>Email</Form.Label>
+                <Form.Control>
+                    <Form.Input placeholder="Email" name="email" value={formValues.name}
+                                onChange={e => setFormValues({...formValues, email: e.target.value})}/>
+                    <Icon align="left">
+                        <i className="far fa-envelope"/>
+                    </Icon>
+                </Form.Control>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Password</Form.Label>
+                <Form.Control>
+                    <Form.Input placeholder="Password" name="password" type="password" value={formValues.password}
+                                onChange={e => setFormValues({...formValues, password: e.target.value})}/>
+                    <Icon align="left">
+                        <i className="fas fa-key"/>
+                    </Icon>
+                </Form.Control>
+            </Form.Field>
+            <Button.Group>
+                <Button fullwidth rounded color="primary" onClick={submitHandler}>Login</Button>
+            </Button.Group>
+        </div>
     )
 }
 

@@ -22,6 +22,7 @@ function App() {
             getUsers()
                 .then(data => {
                     setUsers(data);
+                    console.log('data',data);
                     setError("");
                 })
                 .catch(() => {

@@ -6,7 +6,7 @@ function ListOfAlbums({albums}) {
 
     return (
         <div>
-            {listItems}
+           hello
         </div>
     );
 
