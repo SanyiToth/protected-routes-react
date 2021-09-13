@@ -1,12 +1,29 @@
 import React from 'react';
+import {Card, Columns, Content, Heading, Image, Media} from "react-bulma-components";
 
 function ListOfAlbums({albums}) {
 
-    const listItems = albums.map((album) => <li key={album.id}>{album.title}</li>);
+    const listItems = albums.map((album) =>
+        <Columns.Column>
+            <Card style={{width: 300, margin: 'auto'}}>
+                <Card.Content>
+                    <Media>
+                        <Media.Item>
+                            <Heading size={4}>{album.id}</Heading>
+                        </Media.Item>
+                    </Media>
+                    <Content>
+                        {album.title}
+                    </Content>
+                </Card.Content>
+            </Card>
+        </Columns.Column>);
 
     return (
-        <div>
-           hello
+        <div className="ListOfAlbums">
+            <Columns>
+                {listItems}
+            </Columns>
         </div>
     );
 
