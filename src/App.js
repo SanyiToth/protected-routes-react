@@ -1,9 +1,8 @@
 import './App.css';
 import React, {useEffect, useState} from "react";
-import {BrowserRouter as Router, Route, useHistory} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import Profile from "./components/Profile";
-import {CURRENT_PASSWORD} from "./Password";
 import LoginForm from "./components/LoginForm";
 
 
