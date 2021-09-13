@@ -1,10 +1,13 @@
 import React from 'react';
 import {withRouter} from "react-router-dom";
 
-function Profile() {
+function Profile({Logout}) {
+
+
     return (
         <div>
-            If you see this, it means you are autenticated.
+            <h1>If you see this, it means you are authenticated.</h1>
+            <button onClick={Logout}>LOGOUT</button>
         </div>
     );
 }
