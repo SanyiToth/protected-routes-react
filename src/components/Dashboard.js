@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {withRouter} from "react-router-dom";
+import ListOfAlbums from "./ListOfAlbums";
 
 function Dashboard({Logout}) {
 
@@ -24,9 +25,10 @@ function Dashboard({Logout}) {
         [])
 
     return (
-        <div>
+        <div className="Dashboard">
             <h1>If you see this, it means you are authenticated.</h1>
             <button onClick={Logout}>LOGOUT</button>
+            <ListOfAlbums albums={albums}/>
         </div>
     );
 }
