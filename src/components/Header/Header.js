@@ -1,36 +1,42 @@
 import React from 'react';
-import {Box, Dropdown, Icon, Navbar,} from "react-bulma-components";
+import {Icon, Navbar} from "react-bulma-components";
 import './Header.css';
 
 function Header({Logout, user}) {
 
-
-
-
-
+    const loggedInUser = user[0];
     return (
         <div>
-            <Navbar color="link" className="Header">
+            <Navbar color="success" className="Header">
 
                 <Navbar.Menu>
                     <Navbar.Container align="right">
-                        <Navbar.Item href="#" hoverable={true}>
-
-                            <Navbar.Link align="left">
+                        <Navbar.Item hoverable={true}>
+                            <Navbar.Link arrowless={true}>
                                 <i className="fa fa-user-circle" aria-hidden="true"/>
                             </Navbar.Link>
-
-                            <Navbar.Dropdown>
-                                <Navbar.Item href="#">Valami Valami Valami ValamiV alami
-
-
-
+                            <Navbar.Dropdown right={true}>
+                                <Navbar.Item  flexDirection="column" alignItems="center">
+                                    {loggedInUser.name}
+                                    <Navbar.Divider/>
+                                    <span>
+                                        <Icon>
+                                    <i className="fas fa-phone"/>
+                                        </Icon>
+                                        {loggedInUser.phone}
+                                    </span>
+                                    <span>  <i className="far fa-envelope"/>
+                                        {loggedInUser.email}
+                                    </span>
                                 </Navbar.Item>
+
+                                <Navbar.Item onClick={Logout} justifyContent="center">
+                                    Logout
+                                </Navbar.Item>
+
                             </Navbar.Dropdown>
                         </Navbar.Item>
-                        <Navbar.Item onClick={Logout}>
-                            Logout
-                        </Navbar.Item>
+
                     </Navbar.Container>
                 </Navbar.Menu>
             </Navbar>

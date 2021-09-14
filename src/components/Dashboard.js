@@ -28,7 +28,7 @@ function Dashboard({Logout, user}) {
 
     return (
         <div className="Dashboard">
-            <Header Logout={Logout}/>
+            <Header Logout={Logout} user={user}/>
             <ListOfAlbums albums={albums}/>
         </div>
     );
