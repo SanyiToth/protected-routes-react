@@ -3,7 +3,7 @@ import {withRouter} from "react-router-dom";
 import ListOfAlbums from "./ListOfAlbums";
 import Header from "./Header/Header";
 
-function Dashboard({Logout}) {
+function Dashboard({Logout, user}) {
 
     const [albums, setAlbums] = useState([]);
 
