@@ -7,18 +7,26 @@ function Header({Logout, user}) {
 
 
 
+
     return (
         <div>
             <Navbar color="link" className="Header">
 
                 <Navbar.Menu>
                     <Navbar.Container align="right">
-                        <Navbar.Item>
-                            <Navbar.Link>
-                                User
+                        <Navbar.Item href="#" hoverable={true}>
+
+                            <Navbar.Link align="left">
+                                <i className="fa fa-user-circle" aria-hidden="true"/>
                             </Navbar.Link>
 
+                            <Navbar.Dropdown>
+                                <Navbar.Item href="#">Valami Valami Valami ValamiV alami
 
+
+
+                                </Navbar.Item>
+                            </Navbar.Dropdown>
                         </Navbar.Item>
                         <Navbar.Item onClick={Logout}>
                             Logout

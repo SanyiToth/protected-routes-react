@@ -8,14 +8,15 @@ function Dashboard({Logout, user}) {
     const [albums, setAlbums] = useState([]);
 
 
-    const getAlbums = async () => {
-        let response = await fetch("  https://jsonplaceholder.typicode.com/albums");
+    const getAlbums = async (id) => {
+        let response = await fetch(`https://jsonplaceholder.typicode.com/albums?userId=${id}`);
         return await response.json();
     }
 
 
     useEffect(() => {
-            getAlbums()
+            const userID = user[0].id;
+            getAlbums(userID)
                 .then(data => {
                     setAlbums(data);
                 })

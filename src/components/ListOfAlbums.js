@@ -3,9 +3,11 @@ import {Card, Columns, Content, Heading, Image, Media} from "react-bulma-compone
 
 function ListOfAlbums({albums}) {
 
+
+
     const listItems = albums.map((album) =>
-        <Columns.Column>
-            <Card style={{width: 300, margin: 'auto'}}>
+        <Columns.Column key={album.id}>
+            <Card  style={{width: 300, margin: 'auto'}}>
                 <Card.Content>
                     <Media>
                         <Media.Item>
