@@ -27,8 +27,7 @@ function Dashboard({Logout}) {
 
     return (
         <div className="Dashboard">
-            <Header/>
-            <button onClick={Logout}>LOGOUT</button>
+            <Header Logout={Logout}/>
             <ListOfAlbums albums={albums}/>
         </div>
     );

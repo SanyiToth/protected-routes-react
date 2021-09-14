@@ -13,10 +13,15 @@ function LoginForm({users, error, setError, setIsLoggedIn}) {
 
     const Login = formValues => {
 
-        const isValidEmail = users.filter(user =>
-            formValues.email === user.email).length > 0;
+        const filterUsersEmail = () => {
+            return users.filter(user => formValues.email === user.email);
+        }
+
+        const isValidEmail = filterUsersEmail().length > 0;
+
 
         const isValidPassword = formValues.password === CURRENT_PASSWORD;
+
 
         const navigateToDashboard = () => {
             history.push("/dashboard");
