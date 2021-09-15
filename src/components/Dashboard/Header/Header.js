@@ -4,9 +4,9 @@ import UserProfileCard from "./UserProfileCard/UserProfileCard";
 
 function Header({Logout, user}) {
 
-    const [isActive, setIsActive] = useState(false);
-    const clickOnName = () => {
-        (isActive) ? setIsActive(false) : setIsActive(true);
+    const [isUserNameClicked, setIsUserNameClicked] = useState(false);
+    const clickOnUserName = () => {
+        (isUserNameClicked) ? setIsUserNameClicked(false) : setIsUserNameClicked(true);
     }
 
 
@@ -15,7 +15,7 @@ function Header({Logout, user}) {
             <Navbar color="success" className="Header">
                 <Navbar.Menu>
                     <Navbar.Container align="right">
-                        <Navbar.Item active={isActive} onClick={clickOnName} >
+                        <Navbar.Item active={isUserNameClicked} onClick={clickOnUserName} >
                             <Navbar.Link>
                                 {user.username}
                             </Navbar.Link>
