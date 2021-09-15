@@ -12,10 +12,13 @@ function Header({Logout, user}) {
 
     return (
         <div>
-            <Navbar color="success" className="Header">
-                <Navbar.Menu>
+            <Navbar color="success" className="Header" style={{width: '90%', margin:'0 auto' }}>
+                <Navbar.Brand alignItems="center">
+                    <strong>Protected-Routes-App </strong>
+                </Navbar.Brand>
+                <Navbar.Menu >
                     <Navbar.Container align="right">
-                        <Navbar.Item active={isUserNameClicked} onClick={clickOnUserName} >
+                        <Navbar.Item active={isUserNameClicked} onClick={clickOnUserName}>
                             <Navbar.Link>
                                 {user.username}
                             </Navbar.Link>
