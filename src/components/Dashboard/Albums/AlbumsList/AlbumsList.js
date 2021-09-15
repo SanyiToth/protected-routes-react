@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AlbumItem from "../AlbumItem/AlbumItem";
+import "./AlbumList.css";
 
 function AlbumsList({albums}) {
 
 
     return (
-        <div className="AlbumList">
+        <div className="AlbumsList">
             {albums.map((album) =>
-                <AlbumItem git album={album}/>)}
+                <AlbumItem album={album}/>)}
         </div>
     );
 
