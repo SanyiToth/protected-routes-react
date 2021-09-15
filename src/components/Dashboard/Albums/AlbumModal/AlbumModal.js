@@ -9,7 +9,7 @@ function AlbumModal({album, isModalOpen, setIsModalOpen}) {
             <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <Modal.Content>
                     <Box>
-                        <Media src='https://bulma.io/images/placeholders/128x128.png'>
+                        <Media>
                             <Content>
                                 <h3>Album ID <strong>{album.id}</strong></h3>
                                 <br/>
@@ -17,7 +17,6 @@ function AlbumModal({album, isModalOpen, setIsModalOpen}) {
                                     {album.title}
                                 </h4>
                             </Content>
-
                         </Media>
                     </Box>
                 </Modal.Content>
