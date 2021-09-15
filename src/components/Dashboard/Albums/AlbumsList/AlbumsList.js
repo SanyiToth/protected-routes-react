@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import AlbumItem from "../AlbumItem/AlbumItem";
 import "./AlbumList.css";
 
