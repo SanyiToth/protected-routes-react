@@ -29,7 +29,7 @@ function LoginForm({setUser, setError, setIsLoggedIn}) {
                 const isValidPassword = formValues.password === CURRENT_PASSWORD;
 
                 if (isValidPassword && isValidEmail) {
-                    setUser(data);
+                    setUser(data[0]);
                     setIsLoggedIn(true);
                     setError("");
                 } else {

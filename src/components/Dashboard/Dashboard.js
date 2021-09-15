@@ -15,7 +15,7 @@ function Dashboard({Logout, user}) {
 
 
     useEffect(() => {
-            const userID = user[0].id;
+            const userID = user.id;
             getAlbums(userID)
                 .then(data => {
                     setAlbums(data);

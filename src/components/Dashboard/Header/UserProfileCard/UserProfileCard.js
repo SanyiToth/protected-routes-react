@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, Content, Heading, Image, Media} from "react-bulma-components";
 
-function UserProfileCard({loggedInUser}) {
+function UserProfileCard({user}) {
     return (
         <Card style={{width: 300, margin: 'auto'}}>
             <Card.Content>
@@ -14,11 +14,11 @@ function UserProfileCard({loggedInUser}) {
                         />
                     </Media.Item>*/}
                     <Media.Item>
-                        <Heading size={4}>{loggedInUser.name}</Heading>
+                        <Heading size={4}>{user.name}</Heading>
                         <Heading subtitle size={6}>
-                            Tel.: {loggedInUser.phone} <br/>
-                            Email: {loggedInUser.email}<br/>
-                            {`Address: ${loggedInUser.address.zipcode}, ${loggedInUser.address.city}, ${loggedInUser.address.street} ${loggedInUser.address.suite}`}
+                            Tel.: {user.phone} <br/>
+                            Email: {user.email}<br/>
+                            {`Address: ${user.address.zipcode}, ${user.address.city}, ${user.address.street} ${user.address.suite}`}
                         </Heading>
                     </Media.Item>
                 </Media>

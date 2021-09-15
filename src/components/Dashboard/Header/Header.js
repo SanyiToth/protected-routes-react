@@ -4,7 +4,6 @@ import UserProfileCard from "./UserProfileCard/UserProfileCard";
 
 function Header({Logout, user}) {
 
-    const loggedInUser = user[0];
     const [isActive, setIsActive] = useState(false);
     const clickOnName = () => {
         (isActive) ? setIsActive(false) : setIsActive(true);
@@ -16,18 +15,19 @@ function Header({Logout, user}) {
             <Navbar color="success" className="Header">
                 <Navbar.Menu>
                     <Navbar.Container align="right">
-                        <Navbar.Item active={isActive} onClick={clickOnName}>
+                        <Navbar.Item active={isActive} onClick={clickOnName} >
                             <Navbar.Link arrowless={true}>
-                                {loggedInUser.username}
+                                {user.username}
                             </Navbar.Link>
                             <Navbar.Dropdown right={true}>
-                                <UserProfileCard loggedInUser={loggedInUser}/>
+                                <UserProfileCard user={user}/>
                             </Navbar.Dropdown>
                         </Navbar.Item>
                         <Navbar.Item onClick={Logout}>
                             <Icon>
                                 <i className="fas fa-sign-out-alt"/>
                             </Icon>
+                            <span>Logout</span>
                         </Navbar.Item>
                     </Navbar.Container>
                 </Navbar.Menu>
