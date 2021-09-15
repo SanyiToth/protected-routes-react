@@ -16,7 +16,7 @@ function Header({Logout, user}) {
                 <Navbar.Menu>
                     <Navbar.Container align="right">
                         <Navbar.Item active={isActive} onClick={clickOnName} >
-                            <Navbar.Link arrowless={true}>
+                            <Navbar.Link>
                                 {user.username}
                             </Navbar.Link>
                             <Navbar.Dropdown right={true}>

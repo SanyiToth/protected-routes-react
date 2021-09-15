@@ -11,12 +11,9 @@ function ListOfAlbums({albums}) {
                 <Card.Content>
                     <Media>
                         <Media.Item>
-                            <Heading size={4}>{album.id}</Heading>
+                            <Heading size={4}>Album Id {album.id}</Heading>
                         </Media.Item>
                     </Media>
-                    <Content>
-                        {album.title}
-                    </Content>
                 </Card.Content>
             </Card>
         </Columns.Column>);
