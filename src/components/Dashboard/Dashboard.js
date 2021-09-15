@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {withRouter} from "react-router-dom";
-import ListOfAlbums from "./ListOfAlbums";
+import ListOfAlbums from "./ListOfAlbums/ListOfAlbums";
 import Header from "./Header/Header";
 
 function Dashboard({Logout, user}) {

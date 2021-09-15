@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
-import LoginForm from "./components/LoginForm";
-import Dashboard from "./components/Dashboard";
+import LoginForm from "./components/LoginForm/LoginForm";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 
 function App() {

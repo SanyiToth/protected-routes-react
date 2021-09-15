@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {CURRENT_PASSWORD} from "../Password";
+import {CURRENT_PASSWORD} from "../../Password";
 import {Button, Card, Form, Icon} from 'react-bulma-components';
 import {useHistory} from "react-router-dom";
 import 'bulma/css/bulma.min.css';
