@@ -1,13 +1,12 @@
 import React from 'react';
-import {Card, Columns, Content, Heading, Image, Media} from "react-bulma-components";
+import {Card, Columns, Heading, Media} from "react-bulma-components";
 
 function ListOfAlbums({albums}) {
 
 
-
     const listItems = albums.map((album) =>
         <Columns.Column key={album.id}>
-            <Card  style={{width: 300, margin: 'auto'}}>
+            <Card style={{width: 300, margin: 'auto'}}>
                 <Card.Content>
                     <Media>
                         <Media.Item>
