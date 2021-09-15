@@ -5,9 +5,9 @@ function AlbumsList({albums}) {
 
 
     return (
-        <div className="ListOfAlbums">
+        <div className="AlbumList">
             {albums.map((album) =>
-                <AlbumItem album={album}/>)}
+                <AlbumItem git album={album}/>)}
         </div>
     );
 
