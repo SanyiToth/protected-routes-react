@@ -8,8 +8,8 @@ function AlbumItem({album}) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
-        <div className="AlbumItem" key={album.id}>
-            <Card >
+
+            <Card className="AlbumItem" key={album.id} >
                 <Card.Content>
                     <Media>
                         <Media.Item>
@@ -19,7 +19,7 @@ function AlbumItem({album}) {
                 </Card.Content>
                 <AlbumModal album={album} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
             </Card>
-        </div>
+
     );
 }
 

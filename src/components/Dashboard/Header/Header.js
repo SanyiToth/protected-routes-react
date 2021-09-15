@@ -12,7 +12,7 @@ function Header({Logout, user}) {
 
     return (
         <div>
-            <Navbar color="success" className="Header">
+            <Navbar color="success" className="Header" style={{padding:15}}>
                 <Navbar.Brand alignItems="center">
                     <strong>Protected-Routes-App </strong>
                 </Navbar.Brand>

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {withRouter} from "react-router-dom";
 import AlbumsList from "./Albums/AlbumsList/AlbumsList";
 import Header from "./Header/Header";
+import './Dashboard.css';
 
 function Dashboard({Logout, user}) {
 
