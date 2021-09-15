@@ -11,11 +11,11 @@ function AlbumModal({album, isModalOpen, setIsModalOpen}) {
                     <Box>
                         <Media src='https://bulma.io/images/placeholders/128x128.png'>
                             <Content>
-                                <p>
-                                    <small>Album ID</small> <strong>{album.id}</strong>
-                                    <br/>
+                                <h3>Album ID <strong>{album.id}</strong></h3>
+                                <br/>
+                                <h4>
                                     {album.title}
-                                </p>
+                                </h4>
                             </Content>
 
                         </Media>
