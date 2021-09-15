@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
-import {Box, Button, Content, Media, Modal} from "react-bulma-components";
+import {Box, Content, Media, Modal} from "react-bulma-components";
 
 
-function AlbumModal({album,isModalOpen, setIsModalOpen}) {
-
+function AlbumModal({album, isModalOpen, setIsModalOpen}) {
 
 
     return (
@@ -14,11 +12,9 @@ function AlbumModal({album,isModalOpen, setIsModalOpen}) {
                         <Media src='https://bulma.io/images/placeholders/128x128.png'>
                             <Content>
                                 <p>
-                                    <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                                    <small>Album ID</small> <strong>{album.id}</strong>
                                     <br/>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
-                                    pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis
-                                    feugiat facilisis.
+                                    {album.title}
                                 </p>
                             </Content>
 
