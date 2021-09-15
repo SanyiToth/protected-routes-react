@@ -7,16 +7,17 @@ function Header({Logout, user}) {
     const loggedInUser = user[0];
     return (
         <div>
-            <Navbar color="success" className="Header">
+            <Navbar color="primary" className="Header">
 
                 <Navbar.Menu>
                     <Navbar.Container align="right">
                         <Navbar.Item hoverable={true}>
                             <Navbar.Link arrowless={true}>
-                                <i className="fa fa-user-circle" aria-hidden="true"/>
+                                {/* <i className="fa fa-user-circle" aria-hidden="true"/>*/}
+                                {loggedInUser.name}
                             </Navbar.Link>
                             <Navbar.Dropdown right={true}>
-                                <Navbar.Item  flexDirection="column" alignItems="center">
+                                <Navbar.Item flexDirection="column" alignItems="center">
                                     {loggedInUser.name}
                                     <Navbar.Divider/>
                                     <span>
@@ -35,6 +36,12 @@ function Header({Logout, user}) {
                                 </Navbar.Item>
 
                             </Navbar.Dropdown>
+                        </Navbar.Item>
+
+                        <Navbar.Item onClick={Logout}>
+                            <Icon>
+                                <i className="fas fa-sign-out-alt"/>
+                            </Icon>
                         </Navbar.Item>
 
                     </Navbar.Container>
