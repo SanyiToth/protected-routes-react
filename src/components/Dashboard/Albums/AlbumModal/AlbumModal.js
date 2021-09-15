@@ -21,8 +21,6 @@ function AlbumModal({album, isModalOpen, setIsModalOpen}) {
                     </Box>
                 </Modal.Content>
             </Modal>
-
-
         </div>
     );
 }

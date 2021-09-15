@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Button, Card, Content, Heading, Media, Modal} from "react-bulma-components";
+import {Card, Heading, Media} from "react-bulma-components";
 import './AlbumItem.css'
 import AlbumModal from "../AlbumModal/AlbumModal";
 
