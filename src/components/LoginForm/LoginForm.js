@@ -1,16 +1,15 @@
 import React, {useState} from 'react';
 import {CURRENT_PASSWORD} from "../../Password";
-import {Button, Card, Form, Icon} from 'react-bulma-components';
+import {Button, Card, Form, Icon, Message, Notification} from 'react-bulma-components';
 import {useHistory} from "react-router-dom";
 import 'bulma/css/bulma.min.css';
 import './LoginForm.css';
 
 
-function LoginForm({setUser, setError, setIsLoggedIn}) {
+function LoginForm({setUser, setError, setIsLoggedIn, error}) {
 
     const [formValues, setFormValues] = useState({email: "", password: ""});
     const history = useHistory();
-
 
 
     const navigateToDashboard = () => {
@@ -52,8 +51,14 @@ function LoginForm({setUser, setError, setIsLoggedIn}) {
 
 
     return (
+
         <div className="LoginForm">
+
             <Card className="LoginCard">
+                {(error !== "") ? (
+                    <Notification color={"danger"}>{error} <Button remove onClick={() => {
+                        setError("");
+                    }}/> </Notification>) : ""}
                 <Form.Field>
                     <Form.Label>Email</Form.Label>
                     <Form.Control>
@@ -78,6 +83,7 @@ function LoginForm({setUser, setError, setIsLoggedIn}) {
                 <Button.Group>
                     <Button fullwidth rounded color="success" onClick={submitHandler}>Login</Button>
                 </Button.Group>
+
             </Card>
         </div>
     )

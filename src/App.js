@@ -24,7 +24,7 @@ function App() {
         <div className="App">
             <Router>
                 <Route path="/" exact>
-                    <LoginForm setUser={setUser} setIsLoggedIn={setIsLoggedIn} setError={setError}/>
+                    <LoginForm setUser={setUser} setIsLoggedIn={setIsLoggedIn} setError={setError} error={error}/>
                 </Route>
                 <ProtectedRoute path="/dashboard" user={user} component={Dashboard} Logout={Logout} isLoggedIn={isLoggedIn}/>
             </Router>
