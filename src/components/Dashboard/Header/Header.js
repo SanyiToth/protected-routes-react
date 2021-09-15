@@ -1,10 +1,12 @@
 import React from 'react';
 import {Icon, Navbar} from "react-bulma-components";
 import './Header.css';
+import UserProfileCard from "./UserProfileCard/UserProfileCard";
 
 function Header({Logout, user}) {
 
     const loggedInUser = user[0];
+
     return (
         <div>
             <Navbar color="success" className="Header">
@@ -13,23 +15,10 @@ function Header({Logout, user}) {
                     <Navbar.Container align="right">
                         <Navbar.Item hoverable={true}>
                             <Navbar.Link arrowless={true}>
-                                {loggedInUser.name}
+                                {loggedInUser.username}
                             </Navbar.Link>
                             <Navbar.Dropdown right={true}>
-                                <Navbar.Item flexDirection="column" alignItems="center">
-                                    {loggedInUser.name}
-                                    <Navbar.Divider/>
-                                    <span>
-                                        <Icon>
-                                    <i className="fas fa-phone"/>
-                                        </Icon>
-                                        {loggedInUser.phone}
-                                    </span>
-                                    <span>  <i className="far fa-envelope"/>
-                                        {loggedInUser.email}
-                                    </span>
-                                </Navbar.Item>
-
+                                <UserProfileCard loggedInUser={loggedInUser}/>
                             </Navbar.Dropdown>
                         </Navbar.Item>
 
