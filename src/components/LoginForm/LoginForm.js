@@ -76,7 +76,7 @@ function LoginForm({setUser, setError, setIsLoggedIn}) {
                     </Form.Control>
                 </Form.Field>
                 <Button.Group>
-                    <Button fullwidth rounded color="primary" onClick={submitHandler}>Login</Button>
+                    <Button fullwidth rounded color="success" onClick={submitHandler}>Login</Button>
                 </Button.Group>
             </Card>
         </div>

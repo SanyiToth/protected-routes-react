@@ -7,13 +7,12 @@ function Header({Logout, user}) {
     const loggedInUser = user[0];
     return (
         <div>
-            <Navbar color="primary" className="Header">
+            <Navbar color="success" className="Header">
 
                 <Navbar.Menu>
                     <Navbar.Container align="right">
                         <Navbar.Item hoverable={true}>
                             <Navbar.Link arrowless={true}>
-                                {/* <i className="fa fa-user-circle" aria-hidden="true"/>*/}
                                 {loggedInUser.name}
                             </Navbar.Link>
                             <Navbar.Dropdown right={true}>
@@ -29,10 +28,6 @@ function Header({Logout, user}) {
                                     <span>  <i className="far fa-envelope"/>
                                         {loggedInUser.email}
                                     </span>
-                                </Navbar.Item>
-
-                                <Navbar.Item onClick={Logout} justifyContent="center">
-                                    Logout
                                 </Navbar.Item>
 
                             </Navbar.Dropdown>
