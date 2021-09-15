@@ -6,12 +6,13 @@ function UserProfileCard({loggedInUser}) {
         <Card style={{width: 300, margin: 'auto'}}>
             <Card.Content>
                 <Media alignItems="center">
-                    <Media.Item align="left">
+             {/*       <Media.Item align="left">
                         <Image
+                            size={true}
                             alt="user-pic"
                             src="https://pic.onlinewebfonts.com/svg/img_24787.png"
                         />
-                    </Media.Item>
+                    </Media.Item>*/}
                     <Media.Item>
                         <Heading size={4}>{loggedInUser.name}</Heading>
                         <Heading subtitle size={6}>
