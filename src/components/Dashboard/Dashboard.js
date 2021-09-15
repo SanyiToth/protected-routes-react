@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {withRouter} from "react-router-dom";
-import ListOfAlbums from "./ListOfAlbums/ListOfAlbums";
+import AlbumsList from "./Albums/AlbumsList/AlbumsList";
 import Header from "./Header/Header";
 
 function Dashboard({Logout, user}) {
@@ -29,7 +29,7 @@ function Dashboard({Logout, user}) {
     return (
         <div className="Dashboard">
             <Header Logout={Logout} user={user}/>
-            <ListOfAlbums albums={albums}/>
+            <AlbumsList albums={albums}/>
         </div>
     );
 }
